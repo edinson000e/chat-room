@@ -10,8 +10,6 @@ var users = [];
 // Start the server
 
 
-
-
 app.use(require("express").static('data'));
 app.use(bodyParser.urlencoded({
   extended: true
@@ -21,24 +19,28 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
-
+/*
 const PORT = process.env.PORT || 8181;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-});
+});*/
+
+
   
   //conncecting nodejs to remote mysql
-  var con = mysql.createConnection({
+/*const con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
-    user : 'wordpress_user',
-    password : 'LV5dqiEx+1oVAr',
-    database : 'wpdatabase',
-    port : '3306'
+    user : 'root',
+    password : '',
+    database : 'wordpress',
+    port : '3307'
+
   });
-  con.connect();
+  con.connect();*/
   
-  
+ const con = require('./database');
+ 
   //  getting today's date  
   var now ;
   var today;
@@ -147,3 +149,7 @@ app.listen(PORT, () => {
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
+  const PORT = process.env.PORT || 8181;
+http.listen(PORT, function()  {
+  console.log(`App listening on port 81`);
+});
