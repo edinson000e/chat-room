@@ -22,13 +22,13 @@ app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8181;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
   
   //conncecting nodejs to remote mysql
-  var con = mysql.createConnection({
+  /*var con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
     user : 'root',
@@ -37,7 +37,7 @@ app.listen(PORT, () => {
     port : '3306'
   });
   con.connect();
-  
+  */
   
   //  getting today's date  
   var now ;
