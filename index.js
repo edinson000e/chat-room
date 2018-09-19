@@ -24,7 +24,7 @@ app.get("/",function(req,res){
     user : 'root',
     password : '',
     database : 'wordpress',
-    port : '3307'
+    port : '3306'
   });
   con.connect();
   
