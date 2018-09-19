@@ -28,16 +28,16 @@ app.listen(PORT, () => {
 });
   
   //conncecting nodejs to remote mysql
-  /*var con = mysql.createConnection({
+  var con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
-    user : 'root',
-    password : 'FYqBFbP*2XDbyb',
+    user : 'wordpress_user',
+    password : 'LV5dqiEx+1oVAr',
     database : 'wpdatabase',
     port : '3306'
   });
   con.connect();
-  */
+  
   
   //  getting today's date  
   var now ;
