@@ -1,7 +1,7 @@
 {
   "name": "socketio-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "server socket.io chat-room wordpress",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

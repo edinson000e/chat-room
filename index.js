@@ -1,12 +1,16 @@
-var app = require("express")();
-var bodyParser = require('body-parser');
-var http = require('http').Server(app);
-var io = require("socket.io")(http);
-var mysql = require("mysql");
+const app = require("express")();
+const bodyParser = require('body-parser');
+const http = require('http').Server(app);
+const io = require("socket.io")(http);
+const mysql = require("mysql");
 
-var dateFormat = require('dateformat');
+const dateFormat = require('dateformat');
 var users = [];
-app.set('port', process.env.PORT || 81);
+
+// Start the server
+
+
+
 
 app.use(require("express").static('data'));
 app.use(bodyParser.urlencoded({
@@ -17,14 +21,19 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+});
   
   //conncecting nodejs to remote mysql
   var con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
     user : 'root',
-    password : '',
-    database : 'wordpress',
+    password : 'FYqBFbP*2XDbyb',
+    database : 'wpdatabase',
     port : '3306'
   });
   con.connect();
@@ -134,7 +143,7 @@ app.get("/",function(req,res){
 
   });
   
-  
+  /*
   http.listen(81,function(){
       console.log("Listening on 81");
-  });
+  });*/
