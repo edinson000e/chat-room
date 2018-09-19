@@ -6,6 +6,7 @@ var mysql = require("mysql");
 
 var dateFormat = require('dateformat');
 var users = [];
+app.set('port', process.env.PORT || 81);
 
 app.use(require("express").static('data'));
 app.use(bodyParser.urlencoded({
