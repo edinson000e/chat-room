@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const http = require('http').Server(app);
 const io = require("socket.io")(http);
 const mysql = require("mysql");
+const port = process.env.PORT;
 
 const dateFormat = require('dateformat');
 var users = [];
@@ -40,7 +41,7 @@ app.listen(PORT, () => {
   });
   con.connect();*/
   
- const con = require('./database');
+// const con = require('./database');
  
   //  getting today's date  
   var now ;
@@ -150,7 +151,20 @@ app.listen(PORT, () => {
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
+<<<<<<< HEAD
  /* const PORT = process.env.PORT || 8080;
 http.listen(PORT, function()  {
   console.log(`App listening on port 8080`);
 });*/
+=======
+
+  /*
+  const PORT = process.env.PORT || 8181;
+http.listen(PORT, function()  {
+  console.log(`App listening on port 81`);
+});*/
+/*
+ http.listen(port function()  {
+  console.log(`App listening on port { port}`);
+});*/
+>>>>>>> 167b6ee274403d465dd940555a142da82ac1b447
