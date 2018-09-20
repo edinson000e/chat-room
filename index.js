@@ -1,3 +1,4 @@
+
 const app = require("express")();
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
@@ -19,11 +20,11 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
-/*
-const PORT = process.env.PORT || 8181;
+
+const PORT = process.env.PORT || 443;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-});*/
+});
 
 
   
@@ -149,7 +150,7 @@ app.listen(PORT, () => {
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
-  const PORT = process.env.PORT || 8181;
+ /* const PORT = process.env.PORT || 8080;
 http.listen(PORT, function()  {
-  console.log(`App listening on port 81`);
-});
+  console.log(`App listening on port 8080`);
+});*/
