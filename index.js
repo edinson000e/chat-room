@@ -41,8 +41,8 @@ const con = mysql.createConnection({
 
   });
   con.connect();*/
-  
-// const con = require('./database');
+ 
+ const con = require('./database');
  
   //  getting today's date  
   var now ;
