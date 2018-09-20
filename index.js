@@ -151,12 +151,11 @@ app.listen(PORT, () => {
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
-<<<<<<< HEAD
+
  /* const PORT = process.env.PORT || 8080;
 http.listen(PORT, function()  {
   console.log(`App listening on port 8080`);
 });*/
-=======
 
   /*
   const PORT = process.env.PORT || 8181;
@@ -167,4 +166,4 @@ http.listen(PORT, function()  {
  http.listen(port function()  {
   console.log(`App listening on port { port}`);
 });*/
->>>>>>> 167b6ee274403d465dd940555a142da82ac1b447
+
