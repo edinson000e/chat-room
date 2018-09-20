@@ -152,26 +152,24 @@ const con = mysql.createConnection({
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
-<<<<<<< HEAD
-=======
+
 
  /* const PORT = process.env.PORT || 8080;
 http.listen(PORT, function()  {
   console.log(`App listening on port 8080`);
 });*/
 
->>>>>>> 95dd920fed8cb49475e1bdf950c81cf409564b1a
+
   /*
   const PORT = process.env.PORT || 8181;
 app.listen(PORT, function()  {
   console.log(`App listening on port 81`);
-<<<<<<< HEAD
+
 });*/
-=======
-});*/
+
+
 /*
  http.listen(port function()  {
   console.log(`App listening on port { port}`);
 });*/
 
->>>>>>> 95dd920fed8cb49475e1bdf950c81cf409564b1a
