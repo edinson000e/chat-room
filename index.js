@@ -1,8 +1,10 @@
+
 const app = require("express")();
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
 const io = require("socket.io")(http);
 const mysql = require("mysql");
+const port = process.env.PORT;
 
 const dateFormat = require('dateformat');
 var users = [];
@@ -40,7 +42,7 @@ const con = mysql.createConnection({
   });
   con.connect();*/
   
- const con = require('./database');
+// const con = require('./database');
  
   //  getting today's date  
   var now ;
@@ -150,8 +152,26 @@ const con = mysql.createConnection({
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
+<<<<<<< HEAD
+=======
+
+ /* const PORT = process.env.PORT || 8080;
+http.listen(PORT, function()  {
+  console.log(`App listening on port 8080`);
+});*/
+
+>>>>>>> 95dd920fed8cb49475e1bdf950c81cf409564b1a
   /*
   const PORT = process.env.PORT || 8181;
 app.listen(PORT, function()  {
   console.log(`App listening on port 81`);
+<<<<<<< HEAD
 });*/
+=======
+});*/
+/*
+ http.listen(port function()  {
+  console.log(`App listening on port { port}`);
+});*/
+
+>>>>>>> 95dd920fed8cb49475e1bdf950c81cf409564b1a
