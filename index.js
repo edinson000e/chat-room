@@ -19,16 +19,17 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
-/*
-const PORT = process.env.PORT || 8181;
+
+const PORT = process.env.PORT || 443;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-});*/
+});
 
 
   
   //conncecting nodejs to remote mysql
-/*const con = mysql.createConnection({
+  /*
+const con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
     user : 'root',
@@ -149,7 +150,8 @@ app.listen(PORT, () => {
   http.listen(81,function(){
       console.log("Listening on 81");
   });*/
+  /*
   const PORT = process.env.PORT || 8181;
-http.listen(PORT, function()  {
+app.listen(PORT, function()  {
   console.log(`App listening on port 81`);
-});
+});*/
