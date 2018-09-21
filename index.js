@@ -1,10 +1,19 @@
 
-const app = require("express")();
+
 const bodyParser = require('body-parser');
-const http = require('http').Server(app);
-const io = require("socket.io")(http);
+
+var express = require('express');
+var request = require('request');
+const app = express();
+http = require('http').Server(app);
+//const io = require("socket.io")(http);
 const mysql = require("mysql");
 const port = process.env.PORT;
+
+
+//var server = app.listen(81);
+//var io = require('socket.io')(server);
+
 
 const dateFormat = require('dateformat');
 var users = [];
@@ -21,16 +30,44 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.sendFile(__dirname + '/index.html');
   });
+/*
 
-const PORT = process.env.PORT || 443;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+var METADATA_NETWORK_INTERFACE_URL = 'http://metadata/computeMetadata/v1/' +
+    '/instance/network-interfaces/0/access-configs/0/external-ip';
+
+function getExternalIp (cb) {
+  var options = {
+    url: METADATA_NETWORK_INTERFACE_URL,
+    headers: {
+      'Metadata-Flavor': 'Google'
+    }
+  };
+
+  request(options, function (err, resp, body) {
+    if (err || resp.statusCode !== 200) {
+      console.log('Error while talking to metadata server, assuming localhost');
+      return cb('localhost');
+    }
+    return cb(body);
+  });
+}
+
+
+
+
+var server = http.createServer(app).listen(process.env.PORT || '8080', function () {
+  console.log('App listening on port %s', server.address().port);
+  console.log('Press Ctrl+C to quit.');
 });
+
+const con = require('./database');
+*/
+
 
 
   
   //conncecting nodejs to remote mysql
-  /*
+  
 const con = mysql.createConnection({
    connectionLimit :   100,
     host : 'localhost',
@@ -40,18 +77,36 @@ const con = mysql.createConnection({
     port : '3307'
 
   });
-  con.connect();*/
+  con.connect();
  
- const con = require('./database');
+ 
  
   //  getting today's date  
-  var now ;
+
+
+
+  http.listen(8181,function(){
+      console.log("Listening on 8181");
+  });
+
+var io = require("socket.io")(http);
+
+io.on('connection', function (socket) {
+  console.log('user connected');
+  socket.on('chat_message', function (data) {
+    console.log('client sent:',data);
+    socket.emit('chat_message', 'Server is echoing your message: ' + data);
+  });
+});
+
+
+  // This is auto initiated event when Client connects to Your Machine.  
+  /*
+    var now ;
   var today;
 
   var table;
 
-  
-  // This is auto initiated event when Client connects to Your Machine.  
   io.on('connection',function(socket){  
     // authenticating  and gettting user name from wp_usermeta table. 
     socket.on('validate',function(data){
@@ -147,7 +202,7 @@ const con = mysql.createConnection({
 
 
   });
-  
+  */
   /*
   http.listen(81,function(){
       console.log("Listening on 81");
@@ -167,9 +222,9 @@ app.listen(PORT, function()  {
 
 });*/
 
-
 /*
- http.listen(port function()  {
-  console.log(`App listening on port { port}`);
-});*/
 
+http.listen(65080 function()  {
+  console.log(`App listening on port 65080`);
+});
+*/
